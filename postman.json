@@ -1,0 +1,25 @@
+// 1. Отправить запрос.
+// 2. Статус код 200
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+// 3. Спарсить response body в json.
+var jsonData = pm.response.json();
+// 4. Спарсить request.
+let req = request.data
+let resp = pm.response.json();
+let req_name = req.name
+// 5. Проверить, что name в ответе равно name s request (name забрать из request.)
+
+
+// 6. Проверить, что age в ответе равно age s request (age забрать из request.)
+let req_age = req.age
+pm.test("age", function () {
+    pm.expect(resp.age).to.eql(req_age);
+});
+// 7. Проверить, что salary в ответе равно salary s request (salary забрать из request.)
+// 8. Вывести в консоль параметр family из response.
+// 9. Проверить, что у параметра dog есть параметры name.
+// 10. Проверить, что у параметра dog есть параметры age.
+// 11. Проверить, что параметр name имеет значение Luky.
+// 12. Проверить, что параметр age имеет значение 4.
